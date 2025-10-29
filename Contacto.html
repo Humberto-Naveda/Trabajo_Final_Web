@@ -11,11 +11,19 @@ body {
   margin: 0;
 }
 
-.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
+.header.doble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #008000;
   color: white;
+  padding: 40px;
+}
+
+.header.doble .logo {
+  width: 70px;
+  height: auto;
 }
 
 .navbar {
@@ -41,7 +49,68 @@ body {
   text-align: center;
   background: #ddd;
 }
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: black;
+}
 
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input, textarea {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  margin-top: 15px;
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+#errores p {
+  color: red;
+  margin: 5px 0;
+}
+
+#resultado {
+  width: 400px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
 
     </style>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
@@ -49,8 +118,10 @@ body {
 </head>
 <body>
     
-  <div class="header">
-  <h1>Contactos</h1>
+  <div class="header doble">
+  <img src="logo.jpeg" alt="Logo izquierda" class="logo">
+  <h1>Ferretería Virgen del Valle</h1>
+  <img src="logo.jpeg" alt="Logo derecha" class="logo">
   </div>
 
   <div class="navbar">
@@ -58,13 +129,30 @@ body {
   <a href="Productos.html">Productos</a>
   <a href="Contacto.html">Contacto</a>
   </div>
+  <h1>Formulario de Contacto</h1>
+
+    <form id="contactoForm">
+      <label for="nombre">Nombre y apellido</label>
+      <input type="text" id="nombre" required maxlength="50" />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" required maxlength="15" />
+
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" maxlength="300"></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div id="errores"></div>
+    <div id="resultado"></div>
+
+    <script src="script.js"></script>
 
 
 
-<div class="footer"> 
-<h2>PAGINA EN REPARACION</h2>
-</div>
-
-<div></div>
 </body>
 </html>

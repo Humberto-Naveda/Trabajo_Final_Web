@@ -11,11 +11,19 @@ body {
   margin: 0;
 }
 
-.header {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
+.header.doble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background: #008000;
   color: white;
+  padding: 40px;
+}
+
+.header.doble .logo {
+  width: 70px;
+  height: auto;
 }
 
 .navbar {
@@ -48,10 +56,13 @@ body {
     <script src='main.js'></script>
 </head>
 <body>
-    
-  <div class="header">
-  <h1>Ferreteria Virgen del Valle</h1>
-  </div>
+   
+  
+<div class="header doble">
+  <img src="logo.jpeg" alt="Logo izquierda" class="logo">
+  <h1>Ferretería Virgen del Valle</h1>
+  <img src="logo.jpeg" alt="Logo derecha" class="logo">
+</div> 
 
   <div class="navbar">
   <a href="index.html">Inicio</a>
