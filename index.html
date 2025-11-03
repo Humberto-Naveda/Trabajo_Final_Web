@@ -4,80 +4,192 @@
     <meta charset='utf-8'>
     <title>Ferreteria Virgen del Valle</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <style>
+<style>
 
 body {
   font-family: Arial;
   margin: 0;
 }
 
-.header.doble {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  background: #008000;
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #003049;
   color: white;
-  padding: 40px;
-}
-
-.header.doble .logo {
-  width: 70px;
-  height: auto;
 }
 
 .navbar {
   display: flex;
-  background-color: #333;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #003049;
+  padding: 10px 60px;
+  box-shadow: 0 2px 6px rgba(0, 0,0,0.1);
 }
 
-/* Style the navigation bar links */
-.navbar a {
-  color: white;
-  padding: 14px 20px;
+.logo img {
+height: 200px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+  color: #ddd;
   text-decoration: none;
-  text-align: center;
+  font-weight:500;
+  transition: color 0.9s ease;
 }
 
 .navbar a:hover {
-  background-color: #ddd;
-  color: black;
+  color: #FCA311;
 }
 
 .footer {
   padding: 20px;
   text-align: center;
-  background: #ddd;
+  background: #003049;
 }
 
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+}
 
-    </style>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    color: #003049;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 2s;
+}
+
+.carousel-btn:hover {
+    background-color: #FCA311;
+    color: white;
+}
+
+.carousel-btn.prev {
+    left: 20px;
+}
+
+.carousel-btn.next {
+    right: 20px;
+}
+
+</style>
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+<script src='main.js'></script>
 </head>
-<body>
-   
-  
-<div class="header doble">
-  <img src="logo.jpeg" alt="Logo izquierda" class="logo">
-  <h1>Ferretería Virgen del Valle</h1>
-  <img src="logo.jpeg" alt="Logo derecha" class="logo">
-</div> 
+    <body>
+     <header class="navbar"> 
+        <div class="logo">
+         <img src="Imagenes/LogoFerreteriaDelValle.png" alt="Ferreteria Virgen del Valle">
+        </div>
 
-  <div class="navbar">
-  <a href="index.html">Inicio</a>
-  <a href="Productos.html">Productos</a>
-  <a href="Contacto.html">Contacto</a>
-  </div>
+        <nav class= "nav-links">
+            <a href="#">Inicio</a>
+            <a href="#">Productos</a>
+            <a href="#">Contacto</a>
+        </nav>
 
-<div class="cuerpo"> 
-<h2>Imagenes</h2>
-</div>
+     </header>  
+     
+     <section class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide active">
+                <img src="Imagenes/ferreteria1.jpg" alt="imagen1">
+            </div>
+            <div class="carousel-slide">
+                <img src="Imagenes/ferreteria2.jpg" alt="imagen2">
+            </div>
+            <div class="carousel-slide">
+                <img src="Imagenes/ferreteria3.jpg" alt="imagen3">
+            </div>
 
-<div class="footer"> 
-<h2>Footer</h2>
-</div>
+            <button class="carousel-btn prev">&#10094</button>
+            <button class="carousel-btn next">&#10095</button>
+        </div>
+     </section>
 
-<div></div>
-</body>
+    <div class="footer"> 
+    <h2>Footer</h2>
+    </div>
+
+    <script>
+        //busca todas las imagenes del carrousel
+        const slides = document.querySelectorAll(".carousel-slide");
+        //obtiene los botones de navegacion del carrusel
+        const prevBtn = document.querySelector(".carousel-btn.prev");
+        const nextBtn = document.querySelector(".carousel-btn.next");
+        let currentIndex = 0;
+        
+        //muestra la imagen indicada y oculta las demas
+        function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === index);
+        });
+        }
+
+        //Avanza a la siguiente imagen
+        function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+        }
+
+        //Retrocede a la imagen anterior
+        function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+        }
+
+        //evento que detecta cuando se hace click a los botones
+        nextBtn.addEventListener("click", nextSlide);
+        prevBtn.addEventListener("click", prevSlide);
+
+        // Cambio automático cada 5 segundos
+       // setInterval(nextSlide, 5000);
+    </script>
+
+
+
+    </body>
 </html>
