@@ -1,158 +1,167 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
+  <head>
+    <meta charset="utf-8" />
     <title>Ferreteria Virgen del Valle</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+      body {
+        font-family: Arial;
+        margin: 0;
+      }
 
-body {
-  font-family: Arial;
-  margin: 0;
-}
+      .header {
+        padding: 60px;
+        text-align: center;
+        background: #003049;
+        color: white;
+      }
 
-.header.doble {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  background: #008000;
-  color: white;
-  padding: 40px;
-}
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #003049;
+        padding: 10px 60px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
 
-.header.doble .logo {
-  width: 70px;
-  height: auto;
-}
+      .logo img {
+        height: 200px;
+      }
 
-.navbar {
-  display: flex;
-  background-color: #333;
-}
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
 
-/* Style the navigation bar links */
-.navbar a {
-  color: white;
-  padding: 14px 20px;
-  text-decoration: none;
-  text-align: center;
-}
+      .nav-links a {
+        color: #ddd;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.9s ease;
+      }
 
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
+      .navbar a:hover {
+        color: #fca311;
+      }
 
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-h1 {
-  text-align: center;
-  margin-top: 30px;
-  color: black;
-}
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #003049;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: #003049;
+      }
 
-form {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  margin: 30px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        margin: 30px auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-label {
-  font-weight: bold;
-  margin-top: 10px;
-}
+      label {
+        font-weight: bold;
+        margin-top: 10px;
+      }
 
-input, textarea {
-  margin-top: 5px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
+      input,
+      textarea {
+        margin-top: 5px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
 
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
+      textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
 
-button {
-  margin-top: 15px;
-  background-color: grey;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
+      button {
+        margin-top: 15px;
+        background-color: #fca311;
+        color: white;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
 
-button:hover {
-  background-color: grey;
-}
+      button:hover {
+        background-color: #e78c0a;
+      }
 
-#errores p {
-  color: red;
-  margin: 5px 0;
-}
+      #errores p {
+        color: red;
+        margin: 5px 0;
+      }
 
-#resultado {
-  width: 400px;
-  margin: 20px auto;
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
+      #resultado {
+        width: 400px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
     </style>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-    <script src='main.js'></script>
-</head>
-<body>
-    
-  <div class="header doble">
-  <img src="logo.jpeg" alt="Logo izquierda" class="logo">
-  <h1>Ferretería Virgen del Valle</h1>
-  <img src="logo.jpeg" alt="Logo derecha" class="logo">
-  </div>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img
+          src="Imagenes/LogoFerreteriaDelValle.png"
+          alt="Ferreteria Virgen del Valle"
+        />
+      </div>
 
-  <div class="navbar">
-  <a href="index.html">Inicio</a>
-  <a href="Productos.html">Productos</a>
-  <a href="Contacto.html">Contacto</a>
-  </div>
-  <h1>Formulario de Contacto</h1>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="Productos.html">Productos</a>
+        <a href="Contacto.html">Contacto</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Formulario de Contacto</h1>
 
-    <form id="contactoForm">
-      <label for="nombre">Nombre y apellido</label>
-      <input type="text" id="nombre" required maxlength="50" />
+      <form id="contactoForm">
+        <label for="nombre">Nombre y Apellido</label>
+        <input type="text" id="nombre" required maxlength="50" />
 
-      <label for="email">Email</label>
-      <input type="email" id="email" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
 
-      <label for="telefono">Teléfono</label>
-      <input type="text" id="telefono" required maxlength="15" />
+        <label for="telefono">Teléfono</label>
+        <input type="text" id="telefono" required maxlength="15" />
 
-      <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" maxlength="300"></textarea>
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" maxlength="300"></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
+        <button type="submit">Enviar</button>
+      </form>
 
+      <div id="errores"></div>
+      <div id="resultado"></div>
+    </main>
+    <div class="footer">
+      <h2>Footer</h2>
+    </div>
     <div id="errores"></div>
     <div id="resultado"></div>
 
     <script src="script.js"></script>
-
-
-
-</body>
+  </body>
 </html>
