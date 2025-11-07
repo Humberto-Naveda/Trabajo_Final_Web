@@ -1,167 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset='utf-8'>
     <title>Ferreteria Virgen del Valle</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body {
-        font-family: Arial;
-        margin: 0;
-      }
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="contacto">
+     <header class="navbar"> 
+        <div class="logo">
+         <img src="Imagenes/LogoFerreteriaDelValle.png" alt="Ferreteria Virgen del Valle">
+        </div>
 
-      .header {
-        padding: 60px;
-        text-align: center;
-        background: #003049;
-        color: white;
-      }
+        <nav class= "nav-links">
+            <a href="index.html">Inicio</a>
+            <a href="Productos.html">Productos</a>
+            <a href="Contacto.html">Contacto</a>
+        </nav>
 
-      .navbar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background-color: #003049;
-        padding: 10px 60px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      }
+     </header>
+     <main>
+    <h1>Formulario de Contacto</h1>
 
-      .logo img {
-        height: 200px;
-      }
+    <form id="contactoForm">
+      <label for="nombre">Nombre y Apellido</label>
+      <input type="text" id="nombre" required maxlength="50">
 
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 25px;
-      }
+      <label for="email">Email</label>
+      <input type="email" id="email" required oninput="this.value = this.value.toLowerCase()">
 
-      .nav-links a {
-        color: #ddd;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.9s ease;
-      }
 
-      .navbar a:hover {
-        color: #fca311;
-      }
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" required maxlength="15">
 
-      .footer {
-        padding: 20px;
-        text-align: center;
-        background: #003049;
-      }
-      h1 {
-        text-align: center;
-        margin-top: 30px;
-        color: #003049;
-      }
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" maxlength="300"></textarea>
 
-      form {
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        margin: 30px auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+      <button type="submit">Enviar</button>
+    </form>
 
-      label {
-        font-weight: bold;
-        margin-top: 10px;
-      }
-
-      input,
-      textarea {
-        margin-top: 5px;
-        padding: 8px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      textarea {
-        resize: vertical;
-        min-height: 100px;
-      }
-
-      button {
-        margin-top: 15px;
-        background-color: #fca311;
-        color: white;
-        border: none;
-        padding: 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-      }
-
-      button:hover {
-        background-color: #e78c0a;
-      }
-
-      #errores p {
-        color: red;
-        margin: 5px 0;
-      }
-
-      #resultado {
-        width: 400px;
-        margin: 20px auto;
-        background: #fff;
-        padding: 15px;
-        border-radius: 8px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-  </head>
-  <body>
-    <header class="navbar">
-      <div class="logo">
-        <img
-          src="Imagenes/LogoFerreteriaDelValle.png"
-          alt="Ferreteria Virgen del Valle"
-        />
-      </div>
-
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="Productos.html">Productos</a>
-        <a href="Contacto.html">Contacto</a>
-      </nav>
-    </header>
-    <main>
-      <h1>Formulario de Contacto</h1>
-
-      <form id="contactoForm">
-        <label for="nombre">Nombre y Apellido</label>
-        <input type="text" id="nombre" required maxlength="50" />
-
-        <label for="email">Email</label>
-        <input type="email" id="email" required />
-
-        <label for="telefono">Teléfono</label>
-        <input type="text" id="telefono" required maxlength="15" />
-
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje" maxlength="300"></textarea>
-
-        <button type="submit">Enviar</button>
-      </form>
-
-      <div id="errores"></div>
-      <div id="resultado"></div>
-    </main>
-    <div class="footer">
-      <h2>Footer</h2>
-    </div>
     <div id="errores"></div>
     <div id="resultado"></div>
+  </main>
+  
+    <div id="errores"></div>
+    <div id="resultado"></div>
+    <script src="validacion.js"></script>
 
-    <script src="script.js"></script>
-  </body>
+   <div class="footer"> 
+      <p>&copy; 2025 Ferretería Virgen del Valle - Todos los derechos reservados.</p>
+   </div>  
+
+</body>
 </html>

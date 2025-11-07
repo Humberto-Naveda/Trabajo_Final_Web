@@ -1,0 +1,202 @@
+/* ==== ESTILOS GENERALES ==== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #003049;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #003049;
+  padding: 10px 60px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo img {
+  height: 200px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FCA311;
+}
+
+/* ==== CARRUSEL (solo index.html) ==== */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  color: #003049;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 16px;
+  border-radius: 50%;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.carousel-container :hover {
+  background-color: #FCA311;
+  color: white;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+/* ==== PRODUCTOS ===*/
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+.producto {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.producto:hover {
+    transform: scale(1.10);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 10px;
+    height: 180px;
+    object-fit: cover;
+}
+
+.producto p {
+    color: #555;
+    margin: 5px 0;
+}
+/* ==== FORMULARIO ==== */
+.contacto {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: white;
+}
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  color: #003049;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 30px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input, textarea {
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #FCA311;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #e78c0a;
+}
+
+#errores {
+  width: 400px;
+  margin: 20px auto;
+  background-color: red;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  display: none; 
+}
+
+#resultado {
+  width: 400px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* ==== FOOTER ==== */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #003049;
+  color: white;
+}
