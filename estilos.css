@@ -70,11 +70,6 @@ body {
   z-index: 2;
 }
 
-.carousel-container :hover {
-  background-color: #FCA311;
-  color: white;
-}
-
 #prev {
   left: 20px;
 }

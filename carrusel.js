@@ -29,6 +29,6 @@ siguiente.addEventListener("click", () => mostrarImagen(indice + 1));
 anterior.addEventListener("click", () => mostrarImagen(indice - 1));
 
 // Rotación automática 
-//setInterval(() => {
-  //mostrarImagen(indice + 1);
-//}, 400);
+setInterval(() => {
+  mostrarImagen(indice + 1);
+}, 5000);
