@@ -1,8 +1,8 @@
 // Array con las imágenes del carrusel
 const imagenes = [
-  "imagenes/ferreteria1.jpg",
-  "imagenes/ferreteria2.jpg",
-  "imagenes/ferreteria3.jpg"
+  "Imagenes/ferreteria1.jpg",
+  "Imagenes/ferreteria2.jpg",
+  "Imagenes/ferreteria3.jpg"
 ];
 
 let indice = 0;
