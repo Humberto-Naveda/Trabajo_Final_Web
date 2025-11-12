@@ -1,15 +1,21 @@
 document.getElementById("contactoForm").addEventListener("submit", function (e) {
   e.preventDefault();
   
-  const nombre = document.getElementById("nombre").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const telefono = document.getElementById("telefono").value.trim();
-  const mensaje = document.getElementById("mensaje").value.trim();
+  const nombreInput = document.getElementById("nombre");
+  const emailInput = document.getElementById("email");
+  const telefonoInput = document.getElementById("telefono");
+  const mensajeInput = document.getElementById("mensaje");
   const erroresDiv = document.getElementById("errores");
   const resultadoDiv = document.getElementById("resultado");
 
+  const nombre = nombreInput.value.trim();
+  const email = emailInput.value.trim().toLowerCase();
+  const telefono = telefonoInput.value.trim();
+  const mensaje = mensajeInput.value.trim();
+
   erroresDiv.innerHTML = "";
   resultadoDiv.innerHTML = "";
+
 
   const errores = [];
 
@@ -24,8 +30,17 @@ document.getElementById("contactoForm").addEventListener("submit", function (e) 
   } else if (!nombreRegex.test(nombre)) {
   errores.push("El nombre solo puede contener letras.");
   }
-  if (!emailRegex.test(email)) errores.push("El email no es válido.");
-  if (!telefonoRegex.test(telefono)) errores.push("El teléfono debe contener solo números (6 a 15 dígitos).");
+  if (email === ""){
+    errores.push("El email es obligatorio.");
+  } else if (!emailRegex.test(email)){
+    errores.push("El email no es valido.")
+  }
+
+  if (telefono === ""){
+    errores.push("El teléfono es obligatorio.");
+  } else if(!telefonoRegex.test(telefono)){
+    errores.push("El teléfono debe contener solo números (6 a 15 digitos).")
+  }
 
   // Mostrar errores o datos enviados
   if (errores.length > 0) {
@@ -49,5 +64,7 @@ document.getElementById("contactoForm").addEventListener("submit", function (e) 
       <p><b>Mensaje:</b> ${mensaje}</p>
     `;
     resultadoDiv.appendChild(datos);
+
+    document.getElementById("contactoForm").reset();
   }
 });

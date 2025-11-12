@@ -24,17 +24,17 @@
 
     <form id="contactoForm">
       <label for="nombre">Nombre y Apellido</label>
-      <input type="text" id="nombre" required maxlength="50">
+      <input type="text" id="nombre">
 
       <label for="email">Email</label>
-      <input type="email" id="email" required oninput="this.value = this.value.toLowerCase()">
+      <input type="email" id="email">
 
 
       <label for="telefono">Teléfono</label>
-      <input type="text" id="telefono" required maxlength="15">
+      <input type="text" id="telefono">
 
       <label for="mensaje">Mensaje</label>
-      <textarea id="mensaje" maxlength="300"></textarea>
+      <textarea id="mensaje"></textarea>
 
       <button type="submit">Enviar</button>
     </form>
@@ -43,8 +43,6 @@
     <div id="resultado"></div>
   </main>
   
-    <div id="errores"></div>
-    <div id="resultado"></div>
     <script src="validacion.js"></script>
 
    <div class="footer"> 
